@@ -1,5 +1,6 @@
 
 import './App.css'
+import Navbar from './navbar'
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
    
 
     
-<div className=''>hello</div>
+<Navbar></Navbar>
     
 
      
