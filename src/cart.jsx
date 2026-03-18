@@ -2,14 +2,33 @@ import { useState } from "react";
 import "./App.css";
 import { RxCrossCircled } from "react-icons/rx";
 import { PiBoxingGloveBold } from "react-icons/pi";
-const Cart = ({ cart, cless }) => {
+const Cart = ({ cart, cless,setCart }) => {
+  const [toasts, setToasts] = useState([]);
    const total = cart.reduce(
     (acc, el) => acc + Number(el.currentBidPrice),
     0
   );
+const handleremove=(value)=>{
+setCart(cart.filter((el)=>el.id!==value.id))
+const newToast = { id: Date.now(), message: `${value.title} is removed from cart` };
+    setToasts((prev) => [...prev, newToast]);
 
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t) => t.id !== newToast.id));
+    }, 3000);
+}
   return (
     <div className="sora w-full flex  flex-col text-center gap-2">
+      <div className="fixed top-4 left-0 z-50 flex flex-col gap-2">
+        {toasts.map((t) => (
+          <div
+            key={t.id}
+            className="bg-blue-600 text-white px-5 py-3 rounded-r-full shadow-lg animated-slide-right"
+          >
+            {t.message}
+          </div>
+        ))}
+      </div>
       <div className="flex items-center justify-center gap-2">
         <PiBoxingGloveBold size={20} color="grey" />
         <h2 className="text-blue-900">Favorite Items</h2>
@@ -41,7 +60,7 @@ const Cart = ({ cart, cless }) => {
             <h2 className="text-gray-700">Price: ${el.currentBidPrice}</h2>
           </div>
           <div>
-            <button className="p-2 rounded-full text-gray-500 hover:bg-blue-900 hover:text-white transition-all duration-200">
+            <button onClick={()=>handleremove(el)} className="p-2 rounded-full text-gray-500 hover:bg-blue-900 hover:text-white transition-all duration-200">
               <RxCrossCircled size={25} />
             </button>
           </div>

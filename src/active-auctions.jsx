@@ -27,7 +27,7 @@ const Active = () => {
     }
 
     setCless(true);
-    const newToast = { id: Date.now(), message: `${el.title} is added` };
+    const newToast = { id: Date.now(), message: `${el.title} is added to cart` };
     setToasts((prev) => [...prev, newToast]);
 
     setTimeout(() => {
@@ -87,6 +87,7 @@ const Active = () => {
                   <td className="p-4">
                     <button
                       onClick={() => handleBidClick(el)}
+                      disabled={act.includes(el.id)}
                       className={`flex items-center justify-center mx-auto p-2 rounded-full transition ${
                         act.includes(el.id)
                           ? "bg-blue-900 text-white"
@@ -105,7 +106,7 @@ const Active = () => {
 
       <div className="w-full flex flex-col justify-center items-center md:w-[300px] p-[30px] border-2 rounded-xl ">
         <h className="text-blue-900 font-semibold mt- text-[24px]">Cart</h>
-        <Cart cless={cless} cart={cart}></Cart>
+        <Cart cless={cless} setCart={setCart} cart={cart}></Cart>
       </div>
     </div>
   );
