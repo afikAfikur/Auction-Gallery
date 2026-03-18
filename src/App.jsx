@@ -1,21 +1,13 @@
-
-import './App.css'
-import Navbar from './navbar'
-
+import "./App.css";
+import Navbar from "./navbar";
+import Cover from "./cover";
 function App() {
-
-
   return (
     <>
-   
-
-    
-<Navbar></Navbar>
-    
-
-     
+      <Navbar></Navbar>
+      <Cover></Cover>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
