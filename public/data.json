@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Camera",
+    "description": "A classic 35mm film camera in excellent working condition.",
+    "currentBidPrice": 120,
+    "timeLeft": "2h 15m",
+    "bidsCount": 8,
+    "image": "https://ibb.co.com/n8NMJb98"
+  },
+  {
+    "id": 2,
+    "title": "Gaming Laptop",
+    "description": "High-performance laptop with RTX graphics and 16GB RAM.",
+    "currentBidPrice": 850,
+    "timeLeft": "5h 40m",
+    "bidsCount": 15,
+    "image": "https://ibb.co.com/BH2dsPRh"
+  },
+  {
+    "id": 3,
+    "title": "Guiter",
+    "description": "Latest model Guiter with super exhaust.",
+    "currentBidPrice": 500,
+    "timeLeft": "1h 30m",
+    "bidsCount": 20,
+    "image": "https://ibb.co.com/dwsSpCMV"
+  },
+  {
+    "id": 4,
+    "title": "Wodden Chair",
+    "description": "Durable Chair suitable for babies and olds.",
+    "currentBidPrice": 300,
+    "timeLeft": "3h 10m",
+    "bidsCount": 12,
+    "image": "https://ibb.co.com/hFWG2Qc8"
+  },
+  {
+    "id": 5,
+    "title": "Books",
+    "description": "All type of collections of books including novels and philosophy.",
+    "currentBidPrice": 90,
+    "timeLeft": "4h 25m",
+    "bidsCount": 9,
+    "image": "https://ibb.co.com/rf5XJqxy"
+  },
+  {
+    "id": 6,
+    "title": "Flowers",
+    "description": "Flowers including rose and lavenders .",
+    "currentBidPrice": 150,
+    "timeLeft": "6h 00m",
+    "bidsCount": 14,
+    "image": "https://ibb.co.com/7fy7sj3"
+  }
+]
