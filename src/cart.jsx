@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { RxCrossCircled } from "react-icons/rx";
 import { PiBoxingGloveBold } from "react-icons/pi";
-const Cart = ({ cart, cless,setCart }) => {
+const Cart = ({ cart, cless,setCart,faul }) => {
   const [toasts, setToasts] = useState([]);
    const total = cart.reduce(
     (acc, el) => acc + Number(el.currentBidPrice),
@@ -16,6 +16,7 @@ const newToast = { id: Date.now(), message: `${value.title} is removed from cart
     setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== newToast.id));
     }, 3000);
+    faul(value)
 }
   return (
     <div className="sora w-full flex  flex-col text-center gap-2">

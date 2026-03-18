@@ -7,6 +7,12 @@ const Active = () => {
   const [act, setAct] = useState([]); // track active buttons
   const [toasts, setToasts] = useState([]); // multiple toasts
   const [cart, setCart] = useState([]);
+  
+  const faul=(obj)=>{
+    
+    setAct((prevAct) => prevAct.filter((id) => id !== obj.id));
+  }
+ 
   useEffect(() => {
     const loaddata = async () => {
       const res = await fetch("data.json");
@@ -38,7 +44,7 @@ const Active = () => {
   const [cless, setCless] = useState(false);
 
   return (
-    <div className="relative sora flex flex-col md:flex-row items-start justify-between mx-4 md:mx-[300px] mt-[50px] gap-8 md:gap-[40px] lg:gap-[100px]">
+    <div className="relative sora flex flex-col md:flex-row items-start  mb-[20px]justify-between mx-4 md:mx-[300px] mt-[50px] gap-8 md:gap-[40px] lg:gap-[100px]">
       <div className="fixed top-4 right-0 z-50 flex flex-col gap-2">
         {toasts.map((t) => (
           <div
@@ -87,7 +93,9 @@ const Active = () => {
                   <td className="p-4">
                     <button
                       onClick={() => handleBidClick(el)}
-                      disabled={act.includes(el.id)}
+                      
+                     disabled={act.includes(el.id)} 
+                     
                       className={`flex items-center justify-center mx-auto p-2 rounded-full transition ${
                         act.includes(el.id)
                           ? "bg-blue-900 text-white"
@@ -104,9 +112,9 @@ const Active = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center md:w-[300px] p-[30px] border-2 rounded-xl ">
+      <div className="w-full flex flex-col justify-center items-center md:w-[300px] p-[30px] border-2 rounded-xl mb-4">
         <h className="text-blue-900 font-semibold mt- text-[24px]">Cart</h>
-        <Cart cless={cless} setCart={setCart} cart={cart}></Cart>
+        <Cart faul={faul} cless={cless} setCart={setCart} cart={cart}></Cart>
       </div>
     </div>
   );
